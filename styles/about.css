@@ -1,11 +1,12 @@
 /* About Page Specific Styles */
 .about-page {
     background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-                url('../images/placeholder-watermark.jpg');
+                url('../images/waternarkk.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     min-height: 100vh;
+   
 }
 
 .content-grid {

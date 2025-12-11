@@ -87,3 +87,72 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Landing Page Specific Functionality
+if (document.body.classList.contains('landing-page')) {
+    // Enhanced scroll behavior for navbar
+    const navbar = document.getElementById('mainNav');
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+    
+    // Scroll indicator click
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', function() {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // Parallax effect for background
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector('.landing-page::before');
+        if (parallax) {
+            const rate = scrolled * -0.5;
+            parallax.style.transform = `translate3d(0px, ${rate}px, 0px)`;
+        }
+    });
+    
+    // Preload image for better performance
+    const bgImage = new Image();
+    bgImage.src = 'images/landing.jpg';
+    bgImage.onload = function() {
+        document.body.classList.add('image-loaded');
+    };
+}
+
+// Kevin signature interaction
+const kevinSignature = document.querySelector('.kevin-signature');
+if (kevinSignature) {
+    kevinSignature.addEventListener('mouseenter', function() {
+        // Add subtle glow effect
+        this.style.transition = 'all 0.3s ease';
+    });
+    
+    kevinSignature.addEventListener('click', function(e) {
+        // Optional: Add click confirmation
+        console.log('Navigating to Kevin portfolio...');
+    });
+    
+    // Pulsing animation effect
+    setInterval(() => {
+        if (!kevinSignature.matches(':hover')) {
+            kevinSignature.style.textShadow = `0 2px 10px rgba(0, 0, 0, 0.5),
+                                               0 0 20px rgba(255, 255, 255, 0.1)`;
+            setTimeout(() => {
+                if (!kevinSignature.matches(':hover')) {
+                    kevinSignature.style.textShadow = '0 2px 10px rgba(0, 0, 0, 0.5)';
+                }
+            }, 1000);
+        }
+    }, 3000);
+}

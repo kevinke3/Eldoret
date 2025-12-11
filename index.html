@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eldoret - City of Champions</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/landing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body class="landing-page">
     <!-- Navigation -->
-    <nav class="navbar transparent">
+    <nav class="navbar transparent" id="mainNav">
         <div class="container nav-container">
             <a href="index.html" class="logo">Eldoret<span>KE</span></a>
             <button class="menu-toggle" aria-label="Toggle navigation">
@@ -25,22 +26,27 @@
     </nav>
 
     <!-- Hero Section -->
-    <main class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
+    <section class="hero-section">
+        <div class="hero-content">
             <h1 class="hero-title">ELDORET</h1>
             <p class="hero-subtitle">City of Champions • Heart of the North Rift</p>
-            <p class="hero-tagline">Kenya's Athletic Capital & Agricultural Hub</p>
-            <a href="about.html" class="cta-button">Discover Our Story <i class="fas fa-arrow-right"></i></a>
+            <a href="about.html" class="hero-cta">Explore Our City <i class="fas fa-arrow-right"></i></a>
         </div>
-    </main>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Eldoret City. All rights reserved.</p>
+        <div style="background-color: transparent;" class="container">
+            <p>&copy; 2025 Eldoret City. All rights reserved. <a href="https://kevinke.vercel.app/" target="_blank" class="kevin-signature">Kevin</a></p>
         </div>
     </footer>
+
+    <!-- <a href="https://kevinke.vercel.app/" target="_blank" class="kevin-signature">Kevin</a> -->
 
     <script src="scripts/main.js"></script>
 </body>
